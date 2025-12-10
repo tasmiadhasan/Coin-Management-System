@@ -40,7 +40,7 @@ void menu()
                 scanf("%d",&sub1);
                 if(sub1==1)
                     {
-                        system("CLS");
+                        system("CLS");  //clear screen
                         splash();
                         int bd;
                     puts("\n                                    1.For Coin Image");
