@@ -42,48 +42,68 @@ int main()
 
 void login()
 {
-    char username[200],password[20];
-    FILE*log;
-    log=fopen("login.txt","r");
+    char username[200], password[100];
+    FILE *log;
     struct login l;
+    int found = 0;
+
     puts("                                                  Sign In\n");
     printf("                                             Enter Username:");
-    scanf("%s",&username);
+    scanf("%199s", username);
     printf("                                             Enter Password:");
-    scanf("%s",&password);
-    while(fread(&l,sizeof(l),1,log))
-    {
-        if(strcmp(username,l.username)==0 && strcmp(password,l.password)==0)
-        {
-            printf("                                      Login Successful\n\n");
-            menu();
-        }
-        else{
-            printf("                                        Incorrect Password...type again");
-            system("CLS");
+    scanf("%99s", password);
 
-            login();
+    log = fopen("login.txt", "rb");
+    if (log == NULL) {
+        printf("\n                                   No users registered yet. Please sign up first.\n");
+        getch();
+        system("CLS");
+        regis();
+        return;
+    }
+
+    while (fread(&l, sizeof(l), 1, log) == 1) {
+        if (strcmp(username, l.username) == 0 && strcmp(password, l.password) == 0) {
+            found = 1;
+            break;
         }
     }
+
     fclose(log);
+
+    if (found) {
+        printf("                                      Login Successful\n\n");
+        menu();
+    } else {
+        printf("                                        Incorrect username or password.\n");
+        getch();
+        system("CLS");
+        login();
+    }
 }
 
 
 void regis()
 {
-    FILE*log;
-    log=fopen("login.txt","w");
+    FILE *log;
     struct login l;
+
     puts("                                     Coin Management Security system Registration\n\n");
     printf("                                               Enter first name:");
-    scanf("%s",l.fname);
+    scanf("%99s", l.fname);
     printf("                                               Enter last name:");
-    scanf("%s",l.lname);
+    scanf("%99s", l.lname);
     printf("                                               Enter Username:");
-    scanf("%s",l.username);
+    scanf("%99s", l.username);
     printf("                                               Enter Password:");
-    scanf("%s",l.password);
-    fwrite(&l,sizeof(l),1,log);
+    scanf("%99s", l.password);
+
+    log = fopen("login.txt", "ab");
+    if (log == NULL) {
+        printf("                                   Unable to open login file for writing.\n");
+        return;
+    }
+    fwrite(&l, sizeof(l), 1, log);
     fclose(log);
     printf("\n                                   Please Remember your user name & password!!!\n\n");
     printf("                                           PRESS ANY KEY TO CONTINUE");
