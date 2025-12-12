@@ -18,7 +18,7 @@ char password[100];
 int main()
 {
     int cho;
-    puts("                                             Welcome to Coin Management System\n");
+    puts("\n\n\n\n                                              Welcome to Coin Management System\n");
     puts("\n                                              Please Follow the security Steps\n");
     printf("                                           1.Sign Up\n");
     printf("                                           2.Sign In\n\n");
