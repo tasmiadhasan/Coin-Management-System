@@ -99,10 +99,7 @@ void regis()
     scanf("%99s", l.password);
 
     log = fopen("login.txt", "ab");
-    if (log == NULL) {
-        printf("                                   Unable to open login file for writing.\n");
-        return;
-    }
+
     fwrite(&l, sizeof(l), 1, log);
     fclose(log);
     printf("\n                                   Please Remember your user name & password!!!\n\n");
