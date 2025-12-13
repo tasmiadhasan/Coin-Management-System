@@ -65,10 +65,4 @@ Below are screenshots of the program in action:
 - If compilation fails with missing headers, ensure all `.h` files are in the project root and included correctly.
 - For runtime errors, run the program from PowerShell to see console output and error messages.
 
-**Contributing / Next steps**
-- Add a `LICENSE` if you wish to open-source the project.
-- Add a `Makefile` or build script for easier builds.
-- Consider splitting code into multiple `.c` files and add a small `README` section describing the program flow.
 
-**Contact**
-- Author: Student project. For questions, update the project or ask the project owner.
