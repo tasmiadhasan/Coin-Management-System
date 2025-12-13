@@ -40,6 +40,26 @@ Run the produced executable from PowerShell:
 - The program is a console application. Follow on-screen menus to interact with the coin-management features.
 - If the program expects `login.txt` or other files, ensure they are present in the same folder as the executable.
 
+**Output Images**
+
+Below are screenshots of the program in action:
+
+![Splash Screen](output%20image/sp.jpg)
+
+![Screenshot 1](output%20image/1.jpg)
+
+![Screenshot 2](output%20image/2.jpg)
+
+![Screenshot 3](output%20image/3.jpg)
+
+![Screenshot 4](output%20image/4.jpg)
+
+![Screenshot 5](output%20image/5.jpg)
+
+![Screenshot 6](output%20image/6.jpg)
+
+![Screenshot 7](output%20image/7.jpg)
+
 **Troubleshooting**
 - If `gcc` is not found, install MinGW-w64 and add its `bin` directory to your `PATH`.
 - If compilation fails with missing headers, ensure all `.h` files are in the project root and included correctly.
